@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Database</title>
+    <link rel="stylesheet" href="DBview.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Booking Records</h1>
+
+        <!-- Table to display the database records -->
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Booking Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="bookingTableBody">
+                <!-- Table rows will be populated dynamically by JavaScript -->
+            </tbody>
+        </table>
+
+        <a href="index.html" class="btn-back">Return to Home</a>
+    </div>
+
+    <script>
+        // JavaScript to fetch data from PHP and populate the table
+        window.onload = function() {
+            fetchBookings();
+        };
+
+        function fetchBookings() {
+            // Create a new XMLHttpRequest object
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "fetch_bookings.php", true); // Make a GET request to the PHP file
+
+            // Set the response type to JSON
+            xhr.responseType = 'json';
+
+            // Define what happens on a successful response
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    var bookings = xhr.response; // This will contain the data from the PHP file
+                    var tableBody = document.getElementById('bookingTableBody');
+                    tableBody.innerHTML = ''; // Clear the table before inserting new rows
+
+                    // Loop through each booking and create table rows
+                    bookings.forEach(function(booking) {
+                        var row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${booking.id}</td>
+                            <td>${booking.name}</td>
+                            <td>${booking.email}</td>
+                            <td>${booking.phone}</td>
+                            <td>${booking.booking_date}</td>
+                            <td><a href="delete_booking.php?id=${booking.id}" class="btn-delete">Delete</a></td>
+                        `;
+                        tableBody.appendChild(row); // Add the row to the table
+                    });
+                } else {
+                    alert('Failed to fetch data');
+                }
+            };
+
+            // Send the request
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

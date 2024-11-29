@@ -1,0 +1,78 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: url('Doctor\ pic.jpg') no-repeat center center fixed; /* Add your image file here */
+    background-size: cover; /* Ensures the image covers the whole page */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Wrapper */
+.wrapper {
+    width: 100%;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for readability */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+h1 {
+    color: #5db9f1; /* Light blue theme */
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for better text visibility */
+}
+
+/* Message */
+p {
+    font-size: 20px;
+    color: #fff; /* White text */
+    margin-bottom: 30px;
+    line-height: 1.5;
+    font-weight: bold; /* Makes the text bolder */
+}
+
+/* Button */
+.button {
+    display: inline-block;
+    background-color: #5db9f1; /* Light blue */
+    color: #ffffff;
+    font-size: 18px;
+    padding: 16px 40px;
+    border-radius: 50px; /* Rounded button */
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+/* Button Hover Effect */
+.button:hover {
+    background-color: #4da8d1; /* Slightly darker blue for hover effect */
+    transform: translateY(-2px); /* Button lift effect on hover */
+}
+
+/* Button Active Effect */
+.button:active {
+    transform: translateY(1px); /* Button press effect */
+}
+
+/* Optional Icon */
+.icon {
+    font-size: 50px;
+    color: #5db9f1;
+    margin-bottom: 20px;
+}

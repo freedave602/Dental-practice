@@ -1,0 +1,81 @@
+/* General page styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f9fd; /* light blue background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff; /* white background for content */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #5db9f1; /* light blue text for title */
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #5db9f1; /* light blue header */
+    color: white;
+    font-weight: bold;
+}
+
+table td {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #e2f1fc; /* light hover effect */
+}
+
+/* Button Styles */
+.btn-delete {
+    padding: 8px 16px;
+    background-color: #e74c3c; /* red color for delete */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b; /* darker red on hover */
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #5db9f1; /* light blue for return button */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: #4a90e2; /* darker blue on hover */
+}
